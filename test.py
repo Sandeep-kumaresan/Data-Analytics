@@ -13,6 +13,6 @@ st.image("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTEhI
 st.text("Data download")
 st.download_button(
     label="Click here to download",
-    file_name="img/s.jpg"
+    file_name="s.jpg"
 )
 st.warning("Your PC has been hacked!")
