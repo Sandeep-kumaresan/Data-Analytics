@@ -1,6 +1,12 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
+from PIL import Image
+import io
+image = Image.open("img/s.jpg")
+img_buffer = io.BytesIO()
+image.save(img_buffer, format="JPEG")
+img_bytes = img_buffer.getvalue()
 st.title("Hi All!! Welcome")
 xpoints = np.array([0, 6])
 ypoints = np.array([0, 250])
@@ -13,6 +19,8 @@ st.image("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTEhI
 st.text("Data download")
 st.download_button(
     label="Click here to download",
-    file_name="s.jpg"
+    data=img_bytes,
+    file_name="s.jpg",
+    mime = 'image/jpeg'
 )
 st.warning("Your PC has been hacked!")
